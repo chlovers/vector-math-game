@@ -9,7 +9,7 @@ public class Cams : MonoBehaviour
 
     void Update()
     {
-        // Rotate the camera to simulate scanning behavior
+       
         transform.Rotate(0, rotationspeed * Time.deltaTime, 0);
     }
 
