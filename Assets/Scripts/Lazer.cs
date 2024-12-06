@@ -35,6 +35,11 @@ public class Lazer : MonoBehaviour
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
                 leftover -= Vector3.Distance(ray.origin, hit.point);   
                 ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
+                if (hit.collider.tag == "Trigger")
+                {
+                    hit.collider.gameObject.SetActive(false);
+
+                }
                 if (hit.collider.tag != "Mirror")
                     break;
             }
